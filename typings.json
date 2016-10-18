@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "react-dom": "registry:npm/react-dom#15.0.1+20160705210405",
+    "react-redux": "registry:npm/react-redux#4.4.0+20160614222153"
+  },
+  "globalDependencies": {
+    "classnames": "registry:dt/classnames#0.0.0+20160316155526",
+    "core-js": "registry:dt/core-js#0.0.0+20160602141332",
+    "jquery": "registry:dt/jquery#1.10.0+20160704162008"
+  }
+}

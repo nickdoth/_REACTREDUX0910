@@ -1,0 +1,239 @@
+/* 导航下拉菜单 */
+
+ul.maple-nav {
+    /* 清除<ul>元素,默认填充 */
+    padding: 0;
+    margin: 0;
+}
+
+/* 菜单项目 */
+
+/* 菜单项通常 */
+.maple-nav li {
+  list-style: none;
+  position: relative;
+}
+
+.maple-nav li > a {
+  text-decoration: none;
+  color: #fefefe;
+  float: none;
+  display: block;
+  padding: 10px 25px 10px;
+}
+
+/* 菜单项悬停 */
+.maple-nav li > a:hover {
+  /**#00CACA;*//**#00CED1;*/      /**#84bf96;*/ /**光标悬浮在导航栏文字的背景色块,原作 transparent;*/
+  /*background-color: #6688bb;*/
+  /**光标悬浮时,导航栏的文字颜色,原作 color: #ffffff;*/
+  /*color: #000000;*/
+}
+
+.maple-navbar {
+    background-color: #215B89;
+    box-shadow: 0 2px 10px rgba(0,0,0,.25);
+}
+
+/* 菜单项激活 */
+.maple-nav li.active {
+    background-color: rgba(0,0,0,.25);
+}
+
+
+/* 大于992px的窗口（PC端） */
+@media (min-width: 992px) {
+    .mpale-nav-collapse {
+        height: default;
+    }
+    
+    ul.maple-nav > li {
+        float: left;
+    }
+    
+    .supsing-nav-toggle-btn {
+        display: none;
+    }
+}
+/* 小于992px的窗口（平板，手机） */
+@media  (max-width: 992px) {
+    .maple-nav-collapse {
+        max-height: 400px;
+        overflow-y: auto;
+    }
+    
+    ul.maple-nav > li {
+        float: none;
+        text-align: center;
+    }
+    
+    .supsing-nav-toggle-btn {
+        display: block;
+        text-align: center;
+        width: 100%;
+        cursor: pointer;
+        height: 39px;
+        line-height: 39px;
+    }
+}
+
+/* 菜单切换按钮（小屏幕） */
+.maple-nav-collapse .nav-toggle-btn {
+    cursor: pointer;
+    text-align: center;
+}
+
+@media (min-width: 992px) {
+    .maple-nav-collapse .nav-toggle-btn {
+        display: none;
+    }
+}
+@media (max-width: 992px) {
+    .maple-nav-collapse .nav-toggle-btn {
+        display: block;
+    }
+}
+
+/* 下拉菜单 */
+.supsing-sub {
+
+    display: none;
+    
+    z-index: 50;
+    /* top与导航栏高度一致 */
+    /*top: 39px;*/
+    /* 背景(底色) */
+    background-color: #336699;
+    /* 97%透明度 */
+    background-color: rgba(51, 102, 153, 0.97);
+    
+    /* 阴影,与导航栏一致 */
+    box-shadow: 0 6px 10px rgba(0,0,0,.25);
+    
+    /* 内置样式: 
+    left: 96Npx;
+    或者
+    right: 96Npx;
+    用于指向某个nav-item
+    */
+    *zoom: 1;
+}
+
+@media (min-width: 992px) {
+    .supsing-sub {
+        position: absolute;
+    }
+}
+@media (max-width: 992px) {
+    .supsing-sub {
+        position: static;
+    }
+}
+
+/* 导航栏次级内容框 */
+.supsing-sub > .sub-inner {
+    margin: 4px;
+    /* 内边距: 默认20px */
+    padding: 20px;
+    *zoom: 1;
+    
+}
+/* 内容框子样式 */
+/* 白底黑字 */
+.supsing-sub > .bg-white {
+    color: #000000;
+    background: #ffffff;
+}
+/* 蓝底白字 */
+.supsing-sub > .bg-lightblue {
+    color: #ffffff;
+    background: #0099AF;
+}
+.supsing-sub > .bg-lightblue a,
+.supsing-sub > .bg-lightblue legend {
+    color: #ffffff;
+    text-shadow: none;
+}
+/* 默认透明背景(即深蓝色背景,白色字体) */
+.supsing-sub > .bg-default {
+    color: #ffffff;
+    background: transparent;
+}
+.supsing-sub > .bg-default a,
+.supsing-sub > .bg-default legend {
+    color: #ffffff;
+    text-shadow: none;
+}
+.supsing-sub > .bg-default legend {
+    border-bottom: 1px solid #9595e5;
+}
+/* sub-menu: 正常菜单样式(容器宽度等于li的宽度) */
+.sub-menu {
+    width: 100%
+}
+
+
+
+
+/* !!以下临时的二级菜单样式 */
+@media (min-width: 992px) {
+    .sub-menu {
+        width: 240px;
+    }
+}
+@media (max-width: 992px) {
+    .sub-menu {
+        width: 100%;
+    }
+}
+
+.sub-menu .sub-inner {
+    margin: 0;
+    padding: 0;
+    
+    /* line-height:35px; */
+}
+@media (min-width: 992px) {
+    .sub-menu .sub-inner > div {
+        float: left;
+    }
+    .sub-menu .sub-inner > div > a {
+        width: 120px;
+    }
+}
+@media (max-width: 992px) {
+    .sub-menu .sub-inner > div {
+        float: none;
+        width: 100%;
+    }
+    .sub-menu .sub-inner > div > a {
+        width: 100%;
+    }
+
+    .sub-modal {
+        width: 100% !important;
+    }
+}
+
+.sub-menu .sub-inner > div > a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    /* 默认汉字个数5, 5*14px=70px */
+    
+}
+.sub-menu .sub-inner > div:hover {
+    background-color: rgba(255,255,255,.25);
+}
+
+/*.sup-navbar-inverse .active > a,
+.sup-navbar-inverse .active > a:hover,
+.sup-navbar-inverse .active > a:focus {
+  color: #ffffff;
+  /* color : #000000; */
+  /* background-color: #111111; */
+  /* 导航栏 active样式 * /
+  background-color: rgba(0,0,0,.25);
+} */
